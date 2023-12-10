@@ -1,6 +1,6 @@
 import "../../App.css"
 import axios from "axios";
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import DataTable from 'react-data-table-component';
 import {Popup, Select} from "@mobiscroll/react";
 
