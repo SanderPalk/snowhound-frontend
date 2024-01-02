@@ -130,7 +130,7 @@ function MovieTable() {
         const selectedMovies = selectedRows.selectedRows
 
         selectedMovies.map(movie => {
-            axios.put(process.env.REACT_APP_API_URL + `/api/movies/${movie.id}/status`,`${!movie.status}`, {headers: {"Content-Type": "text/plain"}}) //
+            axios.put(process.env.REACT_APP_API_URL + `/api/movies/${movie.id}/status`,{status: !movie.status}) //
                 .then((response) => {
                     fetchMovies()
                     setToggleCleared(!toggleCleared)
