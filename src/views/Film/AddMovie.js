@@ -23,10 +23,9 @@ function AddMovie() {
 
   useEffect(() => {
     getCategories()
-    mapCategories()
-  });
+  }, []);
 
-  function getCategories() {
+  async function getCategories() {
     axios.get(process.env.REACT_APP_API_URL + '/api/categories')
         .then((response) => {
           setCategories(response.data)
