@@ -18,7 +18,7 @@ function AddMovie() {
 
   function mapCategories() {
     // const newArray = categories.map((item) => ({text: item.name, value: item.id}));
-    return categories.map((category) => ({value: category.id, text: category.name}));
+    return categories.map((category) => ({value: category, text: category.slice(0,1).toUpperCase() + category.slice(1, category.length)}));
   }
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function AddMovie() {
   }, []);
 
   async function getCategories() {
-    axios.get(process.env.REACT_APP_API_URL + '/api/categories')
+    axios.get(process.env.REACT_APP_API_URL + '/api/movies/categories')
         .then((response) => {
           setCategories(response.data)
         })

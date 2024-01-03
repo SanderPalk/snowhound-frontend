@@ -29,7 +29,7 @@ const movieColumns = [
   },
   {
     name: 'Categories',
-    selector: row => row.categories.map(category => category.name).join(', '),
+    selector: row => row.categories.map(category => category).join(', '),
     width: '25%'
   },
   {
@@ -89,7 +89,7 @@ function MovieTable() {
       return items
     }
     return items.filter(
-      item => item.categories.map(category => category.name).includes(categoryFilter)
+      item => item.categories.map(category => category).includes(categoryFilter)
     )
   }
 
@@ -149,7 +149,7 @@ function MovieTable() {
       {value: false, text: 'Inactive'},
       {value: null, text: 'All'}
     ]
-    const movieCategoryData = [...new Set(movieData.flatMap(item => item.categories.map(category => category.name)))];
+    const movieCategoryData = [...new Set(movieData.flatMap(item => item.categories.map(category => category)))];
     movieCategoryData.push("All")
 
     return (
